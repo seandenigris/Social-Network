@@ -1,0 +1,1 @@
+SmalltalkCISpec {  #preLoading : 'scripts/preLoading.st',   #loading : [    SCIMetacelloLoadSpec {      #baseline : 'SocialNetwork',      #directory : 'src',      #platforms : [ #pharo ]    }  ]}
