@@ -10,19 +10,19 @@ BaselineOfSocialNetwork >> baseline: spec [
 
 	spec for: #'common' do: [
 		spec 
-			baseline: 'BabyPhexample' with: [
+			baseline: #'BabyPhexample' with: [
 				spec repository: 'github://seandenigris/Baby-Phexample' ];
-			baseline: 'GoogleApi' with: [
+			baseline: #'GoogleApi' with: [
 				spec
 					repository: 'github://seandenigris/St-Google-API' ].
 		spec package: #SocialNetwork with: [
-				spec requires: #('BabyPhexample' 'GoogleApi' ). ]. ].
+				spec requires: #(#'BabyPhexample' #'GoogleApi' ). ]. ].
 				
 		spec for: #notGToolkit do: [
-			spec baseline: 'PetitParser2Core' with: [
+			spec baseline: #'PetitParser2Core' with: [
 				spec repository: 'github://seandenigris/PetitParser2' ].
 			spec package: #SocialNetwork with: [
-				spec requires: #('PetitParser2Core' ). ] ]
+				spec requires: #(#'PetitParser2Core' ). ] ]
 
 ]
 
