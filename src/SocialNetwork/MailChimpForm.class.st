@@ -1,6 +1,6 @@
 Class {
-	#name : #MailChimpForm,
-	#superclass : #Object,
+	#name : 'MailChimpForm',
+	#superclass : 'Object',
 	#instVars : [
 		'u',
 		'id',
@@ -8,50 +8,52 @@ Class {
 		'firstName',
 		'lastName'
 	],
-	#category : 'SocialNetwork-Core'
+	#category : 'SocialNetwork-Core',
+	#package : 'SocialNetwork',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 MailChimpForm >> email [
 	^ email ifNil: [ '' ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 MailChimpForm >> email: anObject [
 	email := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 MailChimpForm >> firstName [
 	^ firstName ifNil: [ '' ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 MailChimpForm >> firstName: anObject [
 	firstName := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 MailChimpForm >> id [
 	^ id
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 MailChimpForm >> id: anObject [
 	id := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 MailChimpForm >> lastName [
 	^ lastName ifNil: [ '' ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 MailChimpForm >> lastName: anObject [
 	lastName := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 MailChimpForm >> submit [
 	ZnClient new
 		url: 'http://facebook.us11.list-manage.com/subscribe/post';
@@ -63,17 +65,17 @@ MailChimpForm >> submit [
 		post.
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 MailChimpForm >> u [
 	^ u
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 MailChimpForm >> u: anObject [
 	u := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 MailChimpForm >> url [
 	"Adapted from https://blog.mailchimp.com/how-to-pre-fill-items-on-your-mailchi		mp-hosted-form/"
 	| result |

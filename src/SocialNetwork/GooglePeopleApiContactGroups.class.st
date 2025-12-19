@@ -4,19 +4,21 @@
 
 "
 Class {
-	#name : #GooglePeopleApiContactGroups,
-	#superclass : #GooglePeopleApi,
-	#category : 'SocialNetwork-Google-People'
+	#name : 'GooglePeopleApiContactGroups',
+	#superclass : 'GooglePeopleApi',
+	#category : 'SocialNetwork-Google-People',
+	#package : 'SocialNetwork',
+	#tag : 'Google-People'
 }
 
-{ #category : #generated }
+{ #category : 'generated' }
 GooglePeopleApiContactGroups >> batchGet [
 
 	^ self batchGet: ( Dictionary new )
 
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GooglePeopleApiContactGroups >> batchGet: optionsDict [
 	"
 		Get a list of contact groups owned by the authenticated user by specifying
@@ -38,7 +40,7 @@ a list of contact group resource names.
 	^ self makeRequestTo: path usingMethod: action with: optionsDict.
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GooglePeopleApiContactGroups >> create [
 	"
 		Create a new contact group owned by the authenticated user.
@@ -54,14 +56,14 @@ GooglePeopleApiContactGroups >> create [
 	^ self makeRequestTo: path usingMethod: action with: nil.
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GooglePeopleApiContactGroups >> delete: resourceName [ 
 
 	^ self delete: resourceName options: ( Dictionary new )
 
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GooglePeopleApiContactGroups >> delete: resourceName options: optionsDict [
 	"
 		Delete an existing contact group owned by the authenticated user by
@@ -83,14 +85,14 @@ specifying a contact group resource name.
 	^ self makeRequestTo: path usingMethod: action with: optionsDict.
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GooglePeopleApiContactGroups >> get: resourceName [ 
 
 	^ self get: resourceName options: ( Dictionary new )
 
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GooglePeopleApiContactGroups >> get: resourceName options: optionsDict [
 	"
 		Get a specific contact group owned by the authenticated user by specifying
@@ -112,14 +114,14 @@ a contact group resource name.
 	^ self makeRequestTo: path usingMethod: action with: optionsDict.
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GooglePeopleApiContactGroups >> list [
 
 	^ self list: ( Dictionary new )
 
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GooglePeopleApiContactGroups >> list: optionsDict [
 	"
 		List all contact groups owned by the authenticated user. Members of the
@@ -145,7 +147,7 @@ Only resources changed since the sync token was created will be returned.
 	^ self makeRequestTo: path usingMethod: action with: optionsDict.
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GooglePeopleApiContactGroups >> update: resourceName [ 
 	"
 		Update the name of an existing contact group owned by the authenticated

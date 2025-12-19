@@ -4,19 +4,21 @@
 
 "
 Class {
-	#name : #GoogleGmailApiUsersHistory,
-	#superclass : #GoogleGmailApiUsers,
-	#category : 'SocialNetwork-Gmail'
+	#name : 'GoogleGmailApiUsersHistory',
+	#superclass : 'GoogleGmailApiUsers',
+	#category : 'SocialNetwork-Gmail',
+	#package : 'SocialNetwork',
+	#tag : 'Gmail'
 }
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApiUsersHistory >> list: userId [ 
 
 	^ self list: userId options: ( Dictionary new )
 
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApiUsersHistory >> list: userId options: optionsDict [
 	"
 		Lists the history of all changes to the given mailbox. History results are returned in chronological order (increasing historyId).

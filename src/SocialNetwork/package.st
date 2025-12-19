@@ -1,1 +1,1 @@
-Package { #name : #SocialNetwork }
+Package { #name : 'SocialNetwork' }

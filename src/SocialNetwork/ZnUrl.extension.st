@@ -1,6 +1,6 @@
-Extension { #name : #ZnUrl }
+Extension { #name : 'ZnUrl' }
 
-{ #category : #'*SocialNetwork-GoogleContacts' }
+{ #category : '*SocialNetwork-GoogleContacts' }
 ZnUrl >> gcAs: class urlVia: connection [
 	| fullProjectionPathSegments |
 	fullProjectionPathSegments := self pathSegments copy

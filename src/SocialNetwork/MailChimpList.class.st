@@ -1,14 +1,16 @@
 Class {
-	#name : #MailChimpList,
-	#superclass : #Object,
+	#name : 'MailChimpList',
+	#superclass : 'Object',
 	#instVars : [
 		'u',
 		'id'
 	],
-	#category : 'SocialNetwork-Core'
+	#category : 'SocialNetwork-Core',
+	#package : 'SocialNetwork',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 MailChimpList >> exportUrl [
 	| template urlString |
 	template := 'https://us11.admin.mailchimp.com/lists/members/export?id={id}'.
@@ -16,27 +18,27 @@ MailChimpList >> exportUrl [
 	^ urlString asUrl
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 MailChimpList >> id [
 	^ id
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 MailChimpList >> id: anObject [
 	id := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 MailChimpList >> u [
 	^ u
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 MailChimpList >> u: anObject [
 	u := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 MailChimpList >> vCardUrl [
 	| result |
 	result := 'http://facebook.us11.list-manage.com/vcard' asUrl.

@@ -1,6 +1,6 @@
-Extension { #name : #GoogleApiProxy }
+Extension { #name : 'GoogleApiProxy' }
 
-{ #category : #'*SocialNetwork' }
+{ #category : '*SocialNetwork' }
 GoogleApiProxy class >> authenticatedFor: account [
 	^ self connections
 			at: account

@@ -8,37 +8,39 @@ button := HtmlButton new
 button sourceString
 "
 Class {
-	#name : #HtmlButton,
-	#superclass : #Object,
+	#name : 'HtmlButton',
+	#superclass : 'Object',
 	#instVars : [
 		'color',
 		'target',
 		'label'
 	],
-	#category : 'SocialNetwork-Core'
+	#category : 'SocialNetwork-Core',
+	#package : 'SocialNetwork',
+	#tag : 'Core'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 HtmlButton >> color [
 	^ color
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 HtmlButton >> color: anObject [
 	color := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 HtmlButton >> label [
 	^ label
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 HtmlButton >> label: anObject [
 	label := anObject
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 HtmlButton >> sourceString [
 
 	| template |
@@ -55,12 +57,12 @@ HtmlButton >> sourceString [
 			#label -> self label } asDictionary
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 HtmlButton >> target [
 	^ target
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 HtmlButton >> target: anObject [
 	target := anObject
 ]

@@ -4,12 +4,14 @@
 
 "
 Class {
-	#name : #GoogleGmailApiUsersMessages,
-	#superclass : #GoogleGmailApiUsers,
-	#category : 'SocialNetwork-Gmail'
+	#name : 'GoogleGmailApiUsersMessages',
+	#superclass : 'GoogleGmailApiUsers',
+	#category : 'SocialNetwork-Gmail',
+	#package : 'SocialNetwork',
+	#tag : 'Gmail'
 }
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApiUsersMessages >> delete: id userId: userId [ 
 	"
 		Immediately and permanently deletes the specified message. This operation cannot be undone. Prefer messages.trash instead.
@@ -30,14 +32,14 @@ GoogleGmailApiUsersMessages >> delete: id userId: userId [
 	^ self makeRequestTo: path usingMethod: action with: nil.
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApiUsersMessages >> get: id userId: userId [ 
 
 	^ self get: id userId: userId options: ( Dictionary new )
 
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApiUsersMessages >> get: id userId: userId options: optionsDict [
 	"
 		Gets the specified message.
@@ -60,14 +62,14 @@ GoogleGmailApiUsersMessages >> get: id userId: userId options: optionsDict [
 	^ self makeRequestTo: path usingMethod: action with: optionsDict.
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApiUsersMessages >> import: userId [ 
 
 	^ self import: userId options: ( Dictionary new )
 
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApiUsersMessages >> import: userId options: optionsDict [
 	"
 		Imports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP. Does not send a message.
@@ -91,14 +93,14 @@ GoogleGmailApiUsersMessages >> import: userId options: optionsDict [
 	^ self makeRequestTo: path usingMethod: action with: optionsDict.
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApiUsersMessages >> insert: userId [ 
 
 	^ self insert: userId options: ( Dictionary new )
 
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApiUsersMessages >> insert: userId options: optionsDict [
 	"
 		Directly inserts a message into only this user's mailbox similar to IMAP APPEND, bypassing most scanning and classification. Does not send a message.
@@ -120,14 +122,14 @@ GoogleGmailApiUsersMessages >> insert: userId options: optionsDict [
 	^ self makeRequestTo: path usingMethod: action with: optionsDict.
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApiUsersMessages >> list: userId [ 
 
 	^ self list: userId options: ( Dictionary new )
 
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApiUsersMessages >> list: userId options: optionsDict [
 	"
 		Lists the messages in the user's mailbox.
@@ -152,7 +154,7 @@ GoogleGmailApiUsersMessages >> list: userId options: optionsDict [
 	^ self makeRequestTo: path usingMethod: action with: optionsDict.
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApiUsersMessages >> modify: id userId: userId [ 
 	"
 		Modifies the labels on the specified message.
@@ -173,7 +175,7 @@ GoogleGmailApiUsersMessages >> modify: id userId: userId [
 	^ self makeRequestTo: path usingMethod: action with: nil.
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApiUsersMessages >> send: userId [ 
 	"
 		Sends the specified message to the recipients in the To, Cc, and Bcc headers.
@@ -193,7 +195,7 @@ GoogleGmailApiUsersMessages >> send: userId [
 	^ self makeRequestTo: path usingMethod: action with: nil.
 ]
 
-{ #category : #sending }
+{ #category : 'sending' }
 GoogleGmailApiUsersMessages >> send: userId options: optionsDict [
 	"
 		Sends the specified message to the recipients in the To, Cc, and Bcc headers.
@@ -213,7 +215,7 @@ GoogleGmailApiUsersMessages >> send: userId options: optionsDict [
 	^ self makeRequestTo: path usingMethod: action with: optionsDict.
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApiUsersMessages >> send: userId raw: aString [
 	"
 		Sends the specified message to the recipients in the To, Cc, and Bcc headers.
@@ -233,7 +235,7 @@ GoogleGmailApiUsersMessages >> send: userId raw: aString [
 	^ self makeRequestTo: path usingMethod: action with: (Dictionary with: 'raw' -> aString).
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApiUsersMessages >> trash: id userId: userId [ 
 	"
 		Moves the specified message to the trash.
@@ -254,7 +256,7 @@ GoogleGmailApiUsersMessages >> trash: id userId: userId [
 	^ self makeRequestTo: path usingMethod: action with: nil.
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApiUsersMessages >> untrash: id userId: userId [ 
 	"
 		Removes the specified message from the trash.

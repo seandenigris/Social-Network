@@ -2,27 +2,29 @@
 Google Contacts provides read-write access, where People is read-only. However Contacts is not available via the Discovery API and so had to be hand-written.
 "
 Class {
-	#name : #GoogleContactsApi,
-	#superclass : #GoogleApiProxy,
-	#category : 'SocialNetwork-GoogleContacts'
+	#name : 'GoogleContactsApi',
+	#superclass : 'GoogleApiProxy',
+	#category : 'SocialNetwork-GoogleContacts',
+	#package : 'SocialNetwork',
+	#tag : 'GoogleContacts'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 GoogleContactsApi class >> apiName [
 	^ 'contacts'
 ]
 
-{ #category : #convenience }
+{ #category : 'convenience' }
 GoogleContactsApi >> contactWithID: aStringOrURL [
 	^ self new: GoogleContact withID: aStringOrURL
 ]
 
-{ #category : #convenience }
+{ #category : 'convenience' }
 GoogleContactsApi >> contacts [
 	^ self makeRequestTo: 'https://www.google.com/m8/feeds/contacts' asUrl / self user / 'full' usingMethod: #GET with: Dictionary new
 ]
 
-{ #category : #convenience }
+{ #category : 'convenience' }
 GoogleContactsApi >> contactsSelect: aBlock [
 	| url |
 	url := 'https://www.google.com/m8/feeds/contacts' asUrl / self user / 'full'.
@@ -30,7 +32,7 @@ GoogleContactsApi >> contactsSelect: aBlock [
 	^ self makeRequestTo: url usingMethod: #GET with: Dictionary new
 ]
 
-{ #category : #convenience }
+{ #category : 'convenience' }
 GoogleContactsApi >> get: aUrl [
 	| result |
 	result := self makeRequestTo: aUrl usingMethod: #GET with: Dictionary new.
@@ -38,7 +40,7 @@ GoogleContactsApi >> get: aUrl [
 	^ (XMLDOMParser on: result second) parseDocument
 ]
 
-{ #category : #convenience }
+{ #category : 'convenience' }
 GoogleContactsApi >> groupNamed: aString [
 	"https://developers.google.com/google-apps/contacts/v3/#retrieving_contact_groups_using_query_parameters"
 	
@@ -49,27 +51,27 @@ GoogleContactsApi >> groupNamed: aString [
 	^ groups detect: [ :e | e title = aString ]
 ]
 
-{ #category : #convenience }
+{ #category : 'convenience' }
 GoogleContactsApi >> groupWithID: aStringOrURL [
 	"https://developers.google.com/google-apps/contacts/v3/"
 	
 		^ self new: GoogleContactGroup withID: aStringOrURL
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 GoogleContactsApi >> makeRequestTo: url usingMethod: method with: dictionary [
 	"The version must be set to 3.0 - preferably via the headers, but otherwise in the query - https://developers.google.com/google-apps/contacts/v3/#specifying_a_version"
 	^ super makeRequestTo: url ? ('v' -> '3.0') usingMethod: method with: dictionary
 ]
 
-{ #category : #convenience }
+{ #category : 'convenience' }
 GoogleContactsApi >> new: class withID: aStringOrURL [
 	| entry |
 	entry := self xmlFor: class withID: aStringOrURL.
 	^ class fromXMLElement: entry
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 GoogleContactsApi >> scopes [
 	^ OrderedCollection withAll: #(
 		'https://www.googleapis.com/auth/contacts.readonly'
@@ -78,7 +80,7 @@ GoogleContactsApi >> scopes [
 	)
 ]
 
-{ #category : #convenience }
+{ #category : 'convenience' }
 GoogleContactsApi >> search: aString [
 	"Reference: https://developers.google.com/google-apps/contacts/v3/reference#contacts-query-parameters-reference"
 	
@@ -88,12 +90,12 @@ GoogleContactsApi >> search: aString [
 	^ document / #feed / #entry collect: [ :e | GoogleContact fromXMLElement: e ] as: OrderedCollection
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 GoogleContactsApi >> user [
 	^ 'default'
 ]
 
-{ #category : #convenience }
+{ #category : 'convenience' }
 GoogleContactsApi >> xmlFor: class withID: aStringOrURL [
 	| document url |
 	url := aStringOrURL gcAs: class urlVia: self.

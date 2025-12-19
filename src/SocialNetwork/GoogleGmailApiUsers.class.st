@@ -4,12 +4,14 @@
 
 "
 Class {
-	#name : #GoogleGmailApiUsers,
-	#superclass : #GoogleGmailApi,
-	#category : 'SocialNetwork-Gmail'
+	#name : 'GoogleGmailApiUsers',
+	#superclass : 'GoogleGmailApi',
+	#category : 'SocialNetwork-Gmail',
+	#package : 'SocialNetwork',
+	#tag : 'Gmail'
 }
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApiUsers >> getProfile: userId [ 
 	"
 		Gets the current user's Gmail profile.
@@ -29,7 +31,7 @@ GoogleGmailApiUsers >> getProfile: userId [
 	^ self makeRequestTo: path usingMethod: action with: nil.
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApiUsers >> stop: userId [ 
 	"
 		Stop receiving push notifications for the given user mailbox.
@@ -49,7 +51,7 @@ GoogleGmailApiUsers >> stop: userId [
 	^ self makeRequestTo: path usingMethod: action with: nil.
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApiUsers >> watch: userId [ 
 	"
 		Set up or update a push notification watch on the given user mailbox.

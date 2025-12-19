@@ -4,12 +4,14 @@
 
 "
 Class {
-	#name : #GoogleGmailApiUsersDrafts,
-	#superclass : #GoogleGmailApiUsers,
-	#category : #'SocialNetwork-Gmail'
+	#name : 'GoogleGmailApiUsersDrafts',
+	#superclass : 'GoogleGmailApiUsers',
+	#category : 'SocialNetwork-Gmail',
+	#package : 'SocialNetwork',
+	#tag : 'Gmail'
 }
 
-{ #category : #'*SocialNetwork-examples' }
+{ #category : 'examples' }
 GoogleGmailApiUsersDrafts class >> example1 [
 
 	| userID api answer draftInfos draftMetaAnswer |
@@ -28,7 +30,7 @@ GoogleGmailApiUsersDrafts class >> example1 [
 		beginsWith: 'Thank you for your support! Sign up for important updates. '
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApiUsersDrafts >> create: userId [ 
 	"
 		Creates a new draft with the DRAFT label.
@@ -48,7 +50,7 @@ GoogleGmailApiUsersDrafts >> create: userId [
 	^ self makeRequestTo: path usingMethod: action with: nil.
 ]
 
-{ #category : #creating }
+{ #category : 'creating' }
 GoogleGmailApiUsersDrafts >> create: userId options: optionsDict [
 	"
 		Creates a new draft with the DRAFT label.
@@ -68,7 +70,7 @@ GoogleGmailApiUsersDrafts >> create: userId options: optionsDict [
 	^ self makeRequestTo: path usingMethod: action with: optionsDict.
 ]
 
-{ #category : #creating }
+{ #category : 'creating' }
 GoogleGmailApiUsersDrafts >> create: userId query: queryDictionary body: bodyDictionary [
 	"
 		Creates a new draft with the DRAFT label.
@@ -88,7 +90,7 @@ GoogleGmailApiUsersDrafts >> create: userId query: queryDictionary body: bodyDic
 	^ self makeRequestTo: path usingMethod: action query: queryDictionary body: bodyDictionary
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApiUsersDrafts >> delete: id userId: userId [ 
 	"
 		Immediately and permanently deletes the specified draft. Does not simply trash it.
@@ -109,14 +111,14 @@ GoogleGmailApiUsersDrafts >> delete: id userId: userId [
 	^ self makeRequestTo: path usingMethod: action with: nil.
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApiUsersDrafts >> get: id userId: userId [ 
 
 	^ self get: id userId: userId options: ( Dictionary new )
 
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApiUsersDrafts >> get: id userId: userId options: optionsDict [
 	"
 		Gets the specified draft.
@@ -138,14 +140,14 @@ GoogleGmailApiUsersDrafts >> get: id userId: userId options: optionsDict [
 	^ self makeRequestTo: path usingMethod: action with: optionsDict.
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApiUsersDrafts >> list: userId [ 
 
 	^ self list: userId options: ( Dictionary new )
 
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApiUsersDrafts >> list: userId options: optionsDict [
 	"
 		Lists the drafts in the user's mailbox.
@@ -167,7 +169,7 @@ GoogleGmailApiUsersDrafts >> list: userId options: optionsDict [
 	^ self makeRequestTo: path usingMethod: action with: optionsDict.
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApiUsersDrafts >> send: userId [ 
 	"
 		Sends the specified, existing draft to the recipients in the To, Cc, and Bcc headers.
@@ -187,7 +189,7 @@ GoogleGmailApiUsersDrafts >> send: userId [
 	^ self makeRequestTo: path usingMethod: action with: nil.
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApiUsersDrafts >> update: id userId: userId [ 
 	"
 		Replaces a draft's content.

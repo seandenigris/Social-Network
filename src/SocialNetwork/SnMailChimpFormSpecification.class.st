@@ -1,10 +1,12 @@
 Class {
-	#name : #SnMailChimpFormSpecification,
-	#superclass : #BabyPhexample,
-	#category : 'SocialNetwork-Specification'
+	#name : 'SnMailChimpFormSpecification',
+	#superclass : 'BabyPhexample',
+	#category : 'SocialNetwork-Specification',
+	#package : 'SocialNetwork',
+	#tag : 'Specification'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 SnMailChimpFormSpecification >> testHtmlButton [
 	| button |
 	button := HtmlButton new
@@ -21,7 +23,7 @@ SnMailChimpFormSpecification >> testHtmlButton [
 </table>'
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 SnMailChimpFormSpecification >> testUrl [
 
 	| form |

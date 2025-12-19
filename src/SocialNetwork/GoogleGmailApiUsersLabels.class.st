@@ -4,12 +4,14 @@
 
 "
 Class {
-	#name : #GoogleGmailApiUsersLabels,
-	#superclass : #GoogleGmailApiUsers,
-	#category : 'SocialNetwork-Gmail'
+	#name : 'GoogleGmailApiUsersLabels',
+	#superclass : 'GoogleGmailApiUsers',
+	#category : 'SocialNetwork-Gmail',
+	#package : 'SocialNetwork',
+	#tag : 'Gmail'
 }
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApiUsersLabels >> create: userId [ 
 	"
 		Creates a new label.
@@ -29,7 +31,7 @@ GoogleGmailApiUsersLabels >> create: userId [
 	^ self makeRequestTo: path usingMethod: action with: nil.
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApiUsersLabels >> delete: id userId: userId [ 
 	"
 		Immediately and permanently deletes the specified label and removes it from any messages and threads that it is applied to.
@@ -50,7 +52,7 @@ GoogleGmailApiUsersLabels >> delete: id userId: userId [
 	^ self makeRequestTo: path usingMethod: action with: nil.
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApiUsersLabels >> get: id userId: userId [ 
 	"
 		Gets the specified label.
@@ -71,7 +73,7 @@ GoogleGmailApiUsersLabels >> get: id userId: userId [
 	^ self makeRequestTo: path usingMethod: action with: nil.
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApiUsersLabels >> list: userId [ 
 	"
 		Lists all labels in the user's mailbox.
@@ -91,7 +93,7 @@ GoogleGmailApiUsersLabels >> list: userId [
 	^ self makeRequestTo: path usingMethod: action with: nil.
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApiUsersLabels >> patch: id userId: userId [ 
 	"
 		Updates the specified label. This method supports patch semantics.
@@ -112,7 +114,7 @@ GoogleGmailApiUsersLabels >> patch: id userId: userId [
 	^ self makeRequestTo: path usingMethod: action with: nil.
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApiUsersLabels >> update: id userId: userId [ 
 	"
 		Updates the specified label.

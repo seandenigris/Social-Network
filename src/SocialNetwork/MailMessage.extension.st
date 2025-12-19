@@ -1,6 +1,6 @@
-Extension { #name : #MailMessage }
+Extension { #name : 'MailMessage' }
 
-{ #category : #'*SocialNetwork' }
+{ #category : '*SocialNetwork' }
 MailMessage >> saveAsDraft [
 	| raw api |
 	api := GoogleGmailApiUsersDrafts authenticatedFor: self class senderAccount.

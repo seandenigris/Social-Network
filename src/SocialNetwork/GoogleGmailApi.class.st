@@ -9,27 +9,29 @@ Documentation: https://developers.google.com/gmail/api/
 
 "
 Class {
-	#name : #GoogleGmailApi,
-	#superclass : #GoogleApiProxy,
-	#category : 'SocialNetwork-Gmail'
+	#name : 'GoogleGmailApi',
+	#superclass : 'GoogleApiProxy',
+	#category : 'SocialNetwork-Gmail',
+	#package : 'SocialNetwork',
+	#tag : 'Gmail'
 }
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApi class >> apiName [
 	^ 'gmail'
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApi >> basePath [
 	^ 'https://www.googleapis.com/gmail/v1/users/'
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApi >> rootPath [
 	^ 'https://www.googleapis.com/'
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApi >> scopes [
 	^ OrderedCollection withAll: #(
 		'https://www.googleapis.com/auth/gmail.insert'

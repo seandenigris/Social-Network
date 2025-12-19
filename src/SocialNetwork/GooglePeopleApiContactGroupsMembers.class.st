@@ -4,12 +4,14 @@
 
 "
 Class {
-	#name : #GooglePeopleApiContactGroupsMembers,
-	#superclass : #GooglePeopleApiContactGroups,
-	#category : 'SocialNetwork-Google-People'
+	#name : 'GooglePeopleApiContactGroupsMembers',
+	#superclass : 'GooglePeopleApiContactGroups',
+	#category : 'SocialNetwork-Google-People',
+	#package : 'SocialNetwork',
+	#tag : 'Google-People'
 }
 
-{ #category : #generated }
+{ #category : 'generated' }
 GooglePeopleApiContactGroupsMembers >> modify: resourceName [ 
 	"
 		Modify the members of a contact group owned by the authenticated user.

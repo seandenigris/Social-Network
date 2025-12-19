@@ -1,10 +1,12 @@
 Class {
-	#name : #SnSubscriberSpecification,
-	#superclass : #BabyPhexample,
-	#category : 'SocialNetwork-Specification'
+	#name : 'SnSubscriberSpecification',
+	#superclass : 'BabyPhexample',
+	#category : 'SocialNetwork-Specification',
+	#package : 'SocialNetwork',
+	#tag : 'Specification'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 SnSubscriberSpecification >> testPrintFirstNameOnly [
 	| person |
 	person := Subscriber new
@@ -14,7 +16,7 @@ SnSubscriberSpecification >> testPrintFirstNameOnly [
 	person printString should equal: 'Sean <me@myurl.com>'
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 SnSubscriberSpecification >> testPrintNoName [
 	| person |
 	person := Subscriber new
@@ -23,7 +25,7 @@ SnSubscriberSpecification >> testPrintNoName [
 	person printString should equal: 'me@myurl.com'
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 SnSubscriberSpecification >> testPrintWithLastName [
 	| person |
 	person := Subscriber new

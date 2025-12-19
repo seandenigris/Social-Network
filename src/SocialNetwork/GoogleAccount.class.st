@@ -1,6 +1,6 @@
 Class {
-	#name : #GoogleAccount,
-	#superclass : #Object,
+	#name : 'GoogleAccount',
+	#superclass : 'Object',
 	#instVars : [
 		'nickname',
 		'email'
@@ -8,45 +8,47 @@ Class {
 	#classVars : [
 		'Accounts'
 	],
-	#category : 'SocialNetwork-Gmail'
+	#category : 'SocialNetwork-Gmail',
+	#package : 'SocialNetwork',
+	#tag : 'Gmail'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 GoogleAccount class >> chart [
 	^ Accounts ifNil: [ Accounts := OrderedCollection new ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 GoogleAccount class >> chart: anObject [
 	Accounts := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 GoogleAccount class >> detectNamed: aString [
 	^ self chart detect: [ :e | e nickname = aString ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 GoogleAccount >> email [
 	^ email
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 GoogleAccount >> email: anObject [
 	email := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 GoogleAccount >> nickname [
 	^ nickname
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 GoogleAccount >> nickname: anObject [
 	nickname := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 GoogleAccount >> printOn: aStream [
 
 	nickname ifNotNil: [ aStream nextPutAll: self nickname ].

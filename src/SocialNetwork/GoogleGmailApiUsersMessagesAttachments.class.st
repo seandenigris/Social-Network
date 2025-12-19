@@ -4,12 +4,14 @@
 
 "
 Class {
-	#name : #GoogleGmailApiUsersMessagesAttachments,
-	#superclass : #GoogleGmailApiUsersMessages,
-	#category : 'SocialNetwork-Gmail'
+	#name : 'GoogleGmailApiUsersMessagesAttachments',
+	#superclass : 'GoogleGmailApiUsersMessages',
+	#category : 'SocialNetwork-Gmail',
+	#package : 'SocialNetwork',
+	#tag : 'Gmail'
 }
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApiUsersMessagesAttachments >> get: id userId: userId messageId: messageId [ 
 	"
 		Gets the specified message attachment.

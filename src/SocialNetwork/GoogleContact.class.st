@@ -1,15 +1,17 @@
 Class {
-	#name : #GoogleContact,
-	#superclass : #GoogleContactElement,
-	#category : 'SocialNetwork-GoogleContacts'
+	#name : 'GoogleContact',
+	#superclass : 'GoogleContactElement',
+	#category : 'SocialNetwork-GoogleContacts',
+	#package : 'SocialNetwork',
+	#tag : 'GoogleContacts'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 GoogleContact class >> baseUrl [
 	^ 'https://www.google.com/m8/feeds/contacts' asUrl
 ]
 
-{ #category : #'accessing-fields' }
+{ #category : 'accessing-fields' }
 GoogleContact >> email [
 	"We have this special accessor because we're looking for an element attribute"
 	
@@ -19,14 +21,14 @@ GoogleContact >> email [
 	^ element attributeAt: 'address'
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 GoogleContact >> groups [
 	| groupEntries |
 	groupEntries := self cache / 'gContact:groupMembershipInfo'.
 	^ groupEntries collect: [ :e | self server groupWithID: (e attributeAt: #href) asUrl ] as: OrderedCollection
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 GoogleContact >> groups: aCollection [ 
 
 	| newGroups newXML newElement |
@@ -39,7 +41,7 @@ GoogleContact >> groups: aCollection [
 	self server makeRequestTo: self id usingMethod: #PUT query: {} asDictionary body2: { #body -> newXML } asDictionary
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 GoogleContact >> printOn: aStream [
 	[ 
 		| nick |
@@ -50,7 +52,7 @@ GoogleContact >> printOn: aStream [
 		do: [ :ex | super printOn: aStream ]
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : 'as yet unclassified' }
 GoogleContact >> refresh [
 	| account api updated |
 	account := GoogleAccount detectNamed: 'Sean'.

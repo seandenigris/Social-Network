@@ -4,19 +4,21 @@
 
 "
 Class {
-	#name : #GooglePeopleApiPeople,
-	#superclass : #GooglePeopleApi,
-	#category : 'SocialNetwork-Google-People'
+	#name : 'GooglePeopleApiPeople',
+	#superclass : 'GooglePeopleApi',
+	#category : 'SocialNetwork-Google-People',
+	#package : 'SocialNetwork',
+	#tag : 'Google-People'
 }
 
-{ #category : #generated }
+{ #category : 'generated' }
 GooglePeopleApiPeople >> createContact [
 
 	^ self createContact: ( Dictionary new )
 
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GooglePeopleApiPeople >> createContact: optionsDict [
 	"
 		Create a new contact and return the person resource for that contact.
@@ -36,7 +38,7 @@ GooglePeopleApiPeople >> createContact: optionsDict [
 	^ self makeRequestTo: path usingMethod: action with: optionsDict.
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GooglePeopleApiPeople >> deleteContact: resourceName [ 
 	"
 		Delete a contact person. Any non-contact data will not be deleted.
@@ -56,14 +58,14 @@ GooglePeopleApiPeople >> deleteContact: resourceName [
 	^ self makeRequestTo: path usingMethod: action with: nil.
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GooglePeopleApiPeople >> deleteContactPhoto: resourceName [ 
 
 	^ self deleteContactPhoto: resourceName options: ( Dictionary new )
 
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GooglePeopleApiPeople >> deleteContactPhoto: resourceName options: optionsDict [
 	"
 		Delete a contact's photo.
@@ -117,14 +119,14 @@ Valid values are:
 	^ self makeRequestTo: path usingMethod: action with: optionsDict.
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GooglePeopleApiPeople >> get: resourceName [ 
 
 	^ self get: resourceName options: ( Dictionary new )
 
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GooglePeopleApiPeople >> get: resourceName options: optionsDict [
 	"
 		Provides information about a person by specifying a resource name. Use
@@ -190,14 +192,14 @@ response. Each path should start with `person.`: for example,
 	^ self makeRequestTo: path usingMethod: action with: optionsDict.
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GooglePeopleApiPeople >> getBatchGet [
 
 	^ self getBatchGet: ( Dictionary new )
 
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GooglePeopleApiPeople >> getBatchGet: optionsDict [
 	"
 		Provides information about a list of specific people by specifying a list
@@ -266,14 +268,14 @@ You can include up to 50 resource names in one request.
 	^ self makeRequestTo: path usingMethod: action with: optionsDict.
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GooglePeopleApiPeople >> updateContact: resourceName [ 
 
 	^ self updateContact: resourceName options: ( Dictionary new )
 
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GooglePeopleApiPeople >> updateContact: resourceName options: optionsDict [
 	"
 		Update contact data for an existing contact person. Any non-contact data
@@ -330,7 +332,7 @@ with a max length of 27 characters, in the form of
 	^ self makeRequestTo: path usingMethod: action with: optionsDict.
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GooglePeopleApiPeople >> updateContactPhoto: resourceName [ 
 	"
 		Update a contact's photo.

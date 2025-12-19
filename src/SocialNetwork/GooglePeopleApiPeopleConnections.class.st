@@ -4,24 +4,26 @@
 
 "
 Class {
-	#name : #GooglePeopleApiPeopleConnections,
-	#superclass : #GooglePeopleApiPeople,
-	#category : 'SocialNetwork-Google-People'
+	#name : 'GooglePeopleApiPeopleConnections',
+	#superclass : 'GooglePeopleApiPeople',
+	#category : 'SocialNetwork-Google-People',
+	#package : 'SocialNetwork',
+	#tag : 'Google-People'
 }
 
-{ #category : #convenience }
+{ #category : 'convenience' }
 GooglePeopleApiPeopleConnections >> list [
 	^ self list: 'people/me'
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GooglePeopleApiPeopleConnections >> list: resourceName [ 
 
 	^ self list: resourceName options: ( Dictionary new )
 
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GooglePeopleApiPeopleConnections >> list: resourceName options: optionsDict [
 	"
 		Provides a list of the authenticated user's contacts merged with any
@@ -92,7 +94,7 @@ Sync requests that specify `sync_token` have an additional rate limit.
 	^ self makeRequestTo: path usingMethod: action with: optionsDict.
 ]
 
-{ #category : #convenience }
+{ #category : 'convenience' }
 GooglePeopleApiPeopleConnections >> listWithOptions: optionsDict [
 	^ self list: 'people/me' options: optionsDict
 ]

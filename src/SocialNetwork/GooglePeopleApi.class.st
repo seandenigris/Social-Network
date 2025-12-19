@@ -9,27 +9,29 @@ Documentation: https://developers.google.com/people/
 
 "
 Class {
-	#name : #GooglePeopleApi,
-	#superclass : #GoogleApiProxy,
-	#category : 'SocialNetwork-Google-People'
+	#name : 'GooglePeopleApi',
+	#superclass : 'GoogleApiProxy',
+	#category : 'SocialNetwork-Google-People',
+	#package : 'SocialNetwork',
+	#tag : 'Google-People'
 }
 
-{ #category : #generated }
+{ #category : 'generated' }
 GooglePeopleApi class >> apiName [
 	^ 'people'
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GooglePeopleApi >> basePath [
 	^ 'https://people.googleapis.com/'
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GooglePeopleApi >> rootPath [
 	^ 'https://people.googleapis.com/'
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GooglePeopleApi >> scopes [
 	^ OrderedCollection withAll: #(
 		'https://www.googleapis.com/auth/contacts'

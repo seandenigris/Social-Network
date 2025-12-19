@@ -4,12 +4,14 @@
 
 "
 Class {
-	#name : #GoogleGmailApiUsersThreads,
-	#superclass : #GoogleGmailApiUsers,
-	#category : 'SocialNetwork-Gmail'
+	#name : 'GoogleGmailApiUsersThreads',
+	#superclass : 'GoogleGmailApiUsers',
+	#category : 'SocialNetwork-Gmail',
+	#package : 'SocialNetwork',
+	#tag : 'Gmail'
 }
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApiUsersThreads >> delete: id userId: userId [ 
 	"
 		Immediately and permanently deletes the specified thread. This operation cannot be undone. Prefer threads.trash instead.
@@ -30,14 +32,14 @@ GoogleGmailApiUsersThreads >> delete: id userId: userId [
 	^ self makeRequestTo: path usingMethod: action with: nil.
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApiUsersThreads >> get: id userId: userId [ 
 
 	^ self get: id userId: userId options: ( Dictionary new )
 
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApiUsersThreads >> get: id userId: userId options: optionsDict [
 	"
 		Gets the specified thread.
@@ -60,14 +62,14 @@ GoogleGmailApiUsersThreads >> get: id userId: userId options: optionsDict [
 	^ self makeRequestTo: path usingMethod: action with: optionsDict.
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApiUsersThreads >> list: userId [ 
 
 	^ self list: userId options: ( Dictionary new )
 
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApiUsersThreads >> list: userId options: optionsDict [
 	"
 		Lists the threads in the user's mailbox.
@@ -92,7 +94,7 @@ GoogleGmailApiUsersThreads >> list: userId options: optionsDict [
 	^ self makeRequestTo: path usingMethod: action with: optionsDict.
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApiUsersThreads >> modify: id userId: userId [ 
 	"
 		Modifies the labels applied to the thread. This applies to all messages in the thread.
@@ -113,7 +115,7 @@ GoogleGmailApiUsersThreads >> modify: id userId: userId [
 	^ self makeRequestTo: path usingMethod: action with: nil.
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApiUsersThreads >> trash: id userId: userId [ 
 	"
 		Moves the specified thread to the trash.
@@ -134,7 +136,7 @@ GoogleGmailApiUsersThreads >> trash: id userId: userId [
 	^ self makeRequestTo: path usingMethod: action with: nil.
 ]
 
-{ #category : #generated }
+{ #category : 'generated' }
 GoogleGmailApiUsersThreads >> untrash: id userId: userId [ 
 	"
 		Removes the specified thread from the trash.
